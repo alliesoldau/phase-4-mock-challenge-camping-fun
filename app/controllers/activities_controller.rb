@@ -9,7 +9,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_activity_not_found
   def destroy
     activity = Activity.find(params[:id])
     activity.destroy
-    head :no_content
+    head :no_content, status: :ok
   end
 
   private
